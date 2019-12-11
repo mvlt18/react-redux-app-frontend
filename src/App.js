@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux'
+import PlatformsContainer from './containers/PlatformsContainer'
 
 class App extends React.Component {
 
+
   render () {
     return (
-      "This is live"
+      <div>
+      <PlatformsContainer/>
+      </div>
     );
   }
 
 }
 
 
-export default App;
+export default connect()(App);
