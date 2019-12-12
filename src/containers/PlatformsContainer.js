@@ -18,7 +18,7 @@ class PlatformsContainer extends React.Component {
       return (
           <div>
           <PlatformInput/>
-          <Platforms/>
+          <Platforms platforms={this.props.platforms.platforms}/>
           </div>
       )
   }

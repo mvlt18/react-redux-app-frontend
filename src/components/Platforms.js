@@ -1,13 +1,15 @@
 import React from 'react'
 
-const Platforms = (props) => {
+ const Platforms = (props) => {
+
+   console.log(props)
 
   return (
-    <div>
-    Platform List
-    </div>
+  <div>
+    {props.platforms.map(p => <li key={p.id}>{p.name}</li>)}
+  </div>
   )
-  
+
 }
 
 export default Platforms
