@@ -19,6 +19,11 @@ class PlatformInput extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addPlatform(this.state)
+    this.setState({
+      name: '',
+      url: '',
+      image: ''
+    })
   };
 
   render() {
@@ -27,17 +32,17 @@ class PlatformInput extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <p>
             <label>Platform Name</label>
-            <input type='text' onChange={this.handleChange} value={this.state.name} name="name"/>
+            <input type='text' onChange={this.handleChange} value={this.state.name} name="name" placeholder="Platform Name"/>
             </p>
 
             <p>
             <label>Website URL</label>
-            <input type='text' onChange={this.handleChange} value={this.state.url} name="url"/>
+            <input type='text' onChange={this.handleChange} value={this.state.url} name="url" placeholder="Platform URL"/>
             </p>
 
             <p>
             <label>Image URL (optional)</label>
-            <input type='text' onChange={this.handleChange} value={this.state.image} name="image"/>
+            <input type='text' onChange={this.handleChange} value={this.state.image} name="image" placeholder="Platform Image URL"/>
             </p>
             <input type='submit'/>
 
