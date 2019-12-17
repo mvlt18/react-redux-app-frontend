@@ -3,10 +3,13 @@ import React from 'react'
 // import {deleteTransaction} from '../actions/deleteTransaction'
 
 const Courses = (props) => {
+// console.log(props)
 
   return (
     <div>
-    A list of Courses!
+    {props.courses && props.courses.map(course =>
+      <li key={course.id}> {course.name} </li>
+    )}
     </div>
   )
 

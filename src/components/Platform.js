@@ -5,7 +5,8 @@ import CoursesContainer from '../containers/CoursesContainer'
 
    console.log(props)
 
-   let platform = props.platforms[props.match.params.id - 1]
+   // let platform = props.platforms[props.match.params.id - 1]
+   let platform = props.platforms && props.platforms.filter(platform => platform.id == props.match.params.id)[0]
 
    console.log(platform)
 
@@ -13,8 +14,9 @@ import CoursesContainer from '../containers/CoursesContainer'
       <div>
         <h2>
          {platform ? platform.name : null}
-         <CoursesContainer platform={platform}/>
         </h2>
+
+        <CoursesContainer platform={platform}/>
       </div>
     )
 

@@ -7,7 +7,7 @@ class CoursesContainer extends React.Component {
   render() {
     return (
       <div>
-          <CourseInput/>
+          <CourseInput platform={this.props.platform}/>
           <Courses courses={this.props.platform && this.props.platform.courses}/>
       </div>
 
