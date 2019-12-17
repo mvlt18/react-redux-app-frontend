@@ -1,4 +1,5 @@
 import React from 'react'
+import CoursesContainer from '../containers/CoursesContainer'
 
  const Platform = (props) => {
 
@@ -10,7 +11,10 @@ import React from 'react'
 
     return (
       <div>
-       {platform ? platform.name : null} 
+        <h2>
+         {platform ? platform.name : null}
+         <CoursesContainer platform={platform}/>
+        </h2>
       </div>
     )
 
