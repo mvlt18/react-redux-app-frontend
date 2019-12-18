@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addPlatform} from '../actions/addPlatform'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class PlatformInput extends React.Component {
 
@@ -24,36 +26,28 @@ class PlatformInput extends React.Component {
       url: '',
       image: ''
     })
+    this.props.history.push('/platforms');
   };
 
   render() {
       return (
         <div>
-          <form onSubmit={this.handleSubmit}>
-            <p>
-            <label>Platform Name</label>
-            <input type='text' onChange={this.handleChange} value={this.state.name} name="name" placeholder="Platform Name"/>
-            </p>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group controlId="name-input">
+              <Form.Label>Platform Name</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.name} name="name" placeholder="Platform Name"/>
+            </Form.Group>
+            <Form.Group controlId="website-input">
+              <Form.Label>Website URL</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.url} name="url" placeholder="Platform URL"/>
+            </Form.Group>
+            <Form.Group controlId="image-input">
+              <Form.Label>Website URL (optional)</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.image} name="image" placeholder="Platform Image URL"/>
+            </Form.Group>
+            <Button variant="primary" type="submit">Submit</Button>
+          </Form>
 
-            <p>
-            <label>Website URL</label>
-            <input type='text' onChange={this.handleChange} value={this.state.url} name="url" placeholder="Platform URL"/>
-            </p>
-
-            <p>
-            <label>Image URL (optional)</label>
-            <input type='text' onChange={this.handleChange} value={this.state.image} name="image" placeholder="Platform Image URL"/>
-            </p>
-            <input type='submit'/>
-
-            {/*
-              just to test if we are properly changing the state
-              {this.state.name}
-              {this.state.url}
-              {this.state.image}
-            */}
-
-          </form>
         </div>
       )
   };
