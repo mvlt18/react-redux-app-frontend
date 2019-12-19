@@ -7,11 +7,11 @@ const Styles = styled.div`
   background-color: white
 }
 
-.nav-brand, .navbar-nav, .nav-link{
+.navbar-brand, .navbar-nav, .nav-link{
   color: #bbb
 
   &:hover{
-    color: white;
+    color: #white;
   }
 }
 `;
@@ -20,7 +20,7 @@ const NavigationBar = () => {
   return(
     <Styles>
       <Navbar expand="lg">
-        <Navbar.Brand href="/">keep learning.</Navbar.Brand>
+        <Navbar.Brand href="/">root.</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
