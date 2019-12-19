@@ -31,21 +31,21 @@ class PlatformInput extends React.Component {
 
   render() {
       return (
-        <div>
+        <div className="form-div">
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="name-input">
-              <Form.Label>Platform Name</Form.Label>
-              <Form.Control type='text' onChange={this.handleChange} value={this.state.name} name="name" placeholder="Platform Name"/>
+              <Form.Label>Name</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.name} name="name" placeholder="Enter platform name"/>
             </Form.Group>
             <Form.Group controlId="website-input">
-              <Form.Label>Website URL</Form.Label>
-              <Form.Control type='text' onChange={this.handleChange} value={this.state.url} name="url" placeholder="Platform URL"/>
+              <Form.Label>Website</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.url} name="url" placeholder="Enter platform URL"/>
             </Form.Group>
             <Form.Group controlId="image-input">
-              <Form.Label>Website URL (optional)</Form.Label>
-              <Form.Control type='text' onChange={this.handleChange} value={this.state.image} name="image" placeholder="Platform Image URL"/>
+              <Form.Label>Image</Form.Label>
+              <Form.Control type='text' onChange={this.handleChange} value={this.state.image} name="image" placeholder="Enter platform logo URL"/>
             </Form.Group>
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button variant="outline-success" size="sm" block type="submit">Submit</Button>
           </Form>
 
         </div>
