@@ -23,25 +23,19 @@ const Styles = styled.div`
     right:0;
     z-index: -1;
   }
-
-  .mainText{
-    align: center;
-  }
 `;
 
 const Jumbotron = () => {
   return(
     <Styles>
       <Jumbo fluid className="jumbo">
-      <div className="overlay">
-      </div>
-      <Container>
-      <h2 className="mainText"> keep learning. keep growing. </h2>
-      <h3> manage it from one place. </h3>
-
-      </Container>
+        <div className="overlay"></div>
+        <Container>
+          <h2> keep learning. keep growing. </h2>
+          <h3> manage it from one place. </h3>
+          <h3> welcome to root. </h3>
+        </Container>
       </Jumbo>
-
     </Styles>
   )
 }
