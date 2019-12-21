@@ -20,7 +20,7 @@ const NavigationBar = () => {
   return(
     <Styles>
       <Navbar expand="lg">
-        <Navbar.Brand href="/">root.</Navbar.Brand>
+        <Navbar.Brand href="/"><h3>root.</h3></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">

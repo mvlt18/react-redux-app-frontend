@@ -11,10 +11,9 @@ import CoursesContainer from '../containers/CoursesContainer'
 
     return (
       <div>
-        <h2>
+        <h4>
          {platform ? platform.name : null}
-        </h2>
-
+       </h4>
         <CoursesContainer platform={platform}/>
       </div>
     )

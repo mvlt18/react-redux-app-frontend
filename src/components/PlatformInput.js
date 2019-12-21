@@ -31,7 +31,7 @@ class PlatformInput extends React.Component {
 
   render() {
       return (
-        <div className="form-div">
+        <div className="platform-form-div">
           <Form onSubmit={this.handleSubmit}>
             <Form.Group controlId="name-input">
               <Form.Label>Name</Form.Label>
@@ -47,7 +47,6 @@ class PlatformInput extends React.Component {
             </Form.Group>
             <Button variant="outline-success" size="sm" block type="submit">Submit</Button>
           </Form>
-
         </div>
       )
   };
