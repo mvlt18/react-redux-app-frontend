@@ -1,6 +1,5 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
-// import CoursesContainer from '../containers/CoursesContainer'
+import TodosContainer from '../containers/TodosContainer'
 
  const Course = (props) => {
 
@@ -19,7 +18,7 @@ import {Route} from 'react-router-dom'
       <h6 id="course-start-date">Start Date:  {course ? course.start_date : null} </h6>
       <h6>Target End Date: {course ? course.end_date : null}</h6>
 
-
+      <TodosContainer course={course}/>
       </div>
     )
 
