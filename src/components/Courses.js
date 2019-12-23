@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import CourseInput from '../components/CourseInput'
 import ListGroup from 'react-bootstrap/ListGroup'
 // import {connect} from 'react-redux'
@@ -12,7 +12,7 @@ const Courses = (props) => {
     <div className="courses-container">
       {props.platform && props.platform.courses.map(course =>
         <ListGroup variant="light">
-          <ListGroup.Item action variant="light">  <Link to={`/platforms/${props.platform.id}/courses/${course.id}`}>{course.name}</Link></ListGroup.Item>
+          <ListGroup.Item action variant="light" key={course.id}>  <Link to={`/platforms/${props.platform.id}/courses/${course.id}`}>{course.name}</Link></ListGroup.Item>
         </ListGroup>
       )}
 

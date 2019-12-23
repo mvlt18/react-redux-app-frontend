@@ -20,8 +20,8 @@ class PlatformsContainer extends React.Component {
     return (
       <Switch>
            <Route path='/platforms/new' component={PlatformInput}/>
-           <Route path='/platforms/:id' render={(routerProps) => <Platform {...routerProps} platforms={this.props.platforms.platforms}/>}/>
-           <Route path='/platforms' render={(routerProps) => <Platforms {...routerProps} platforms={this.props.platforms.platforms}/>}/>
+           <Route path='/platforms/:id' render={(routerProps) => <Platform {...routerProps} platforms={this.props.platforms}/>}/>
+           <Route path='/platforms' render={(routerProps) => <Platforms {...routerProps} platforms={this.props.platforms}/>}/>
        </Switch>
 
     )

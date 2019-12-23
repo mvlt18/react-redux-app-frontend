@@ -1,5 +1,4 @@
 import React from 'react'
-// import CourseInput from '../components/CourseInput'
 import Courses from '../components/Courses'
 import Course from '../components/Course'
 
