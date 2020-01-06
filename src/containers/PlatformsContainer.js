@@ -6,6 +6,7 @@ import {fetchPlatforms} from '../actions/fetchPlatforms'
 
 import Platforms from '../components/Platforms'
 import PlatformInput from '../components/PlatformInput'
+import Form from '../components/Form'
 import Platform from '../components/Platform'
 
 
@@ -19,9 +20,9 @@ class PlatformsContainer extends React.Component {
   render() {
     return (
       <Switch>
-           <Route path='/platforms/new' component={PlatformInput}/>
-           <Route path='/platforms/:id' render={(routerProps) => <Platform {...routerProps} platforms={this.props.platforms}/>}/>
-           <Route path='/platforms' render={(routerProps) => <Platforms {...routerProps} platforms={this.props.platforms}/>}/>
+           <Route path='/platforms/new' component={Form}/>
+           <Route path='/platforms/:id' render={(routerProps) => <Platform {...routerProps} platforms={this.props.platforms.platforms}/>}/>
+           <Route path='/platforms' render={(routerProps) => <Platforms {...routerProps} platforms={this.props.platforms.platforms}/>}/>
        </Switch>
 
     )
