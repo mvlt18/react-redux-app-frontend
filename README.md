@@ -95,7 +95,7 @@ These are additions and functionalities that I'm currently working on adding:
 #### Backend
 
 * Install Ruby 2.6.1 on your local computer
-* Fork the repository from https://github.com/mvlt18/react-redux-backend
+* Fork the repository from https://github.com/mvlt18/react-redux-app-backend
 * Clone the repository into a directory of your choice with `git clone git@github.com:mvlt18/react-redux-backend.git`
 * Navigate to the directory with `cd react-redux-backend`
 * Run `bundle install`
@@ -104,7 +104,7 @@ These are additions and functionalities that I'm currently working on adding:
 * Open up a server of your choice
 
 #### Frontend
-* Fork the repository from https://github.com/mvlt18/react-redux-frontend
+* Fork the repository from https://github.com/mvlt18/react-redux-app-frontend
 * Clone the repository into a directory of your choice with `git clone git@github.com:mvlt18/react-redux-frontend.git`
 * Navigate to the directory `cd react-redux-frontend` in a separate tab from the backend
 * Run `npm install` to install dependencies.
