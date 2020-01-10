@@ -2,37 +2,39 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-image {
+  width: 260px;
+  height: 160px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.platforms-container{
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.platform-box{
+
 }
 
-.App-link {
-  color: #61dafb;
+.form-div{
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mainText{
+
+}
+
+.new-course-conatiner{
+  margin-top: 40px
+}
+
+#course-name{
+  margin-top: 20px
+}
+
+#course-start-date{
+  margin-top: 40px
+}
+
+.todos-container{
+    margin-top: 40px
 }

@@ -1,68 +1,127 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Root: A React Redux Application
 
-## Available Scripts
+I wanted to build an app I would find useful while also practicing building a React/Redux application.
 
-In the project directory, you can run:
+I brainstormed any challenges I was having that could be aided with the help of a useful app. As I am constantly learning and taking online courses, I began to think about all the digital platforms I use.
 
-### `npm start`
+Udemy, Coursera, Khan Academy, EdX, online textbooks... with so many wonderful resources online, it would be great to have one place you can go to manage and organize all your learning platforms!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I created Root. Root allows you to consolidate all your digital learning platforms into one application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/vdb1up7e6c4h7rb7xkyn.png)
 
-### `npm test`
+You can see all your courses for a single application.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/ovwj8dopbw160disv4u2.png)
 
-### `npm run build`
+Each course, also has the functionality to add to do items.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/c09mhf7p9g7behj37tjs.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend - a rails api
 
-### `npm run eject`
+I built the backend as a Rails API with a PostgreSQL database. I wanted to keep this app simple (at least to start) - I included 3 models as a basic framework.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Platform
+2. Course
+3. Todo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/jtpiy86a6vfuguhklzpc.png)
+For serialization I used the active_model_serializer gem and intentionally nested everything into the platforms index page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Frontend - react/redux/bootstrap
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To organize the frontend architecture, I have 3 containers and 12 components.
 
-## Learn More
+The top-most component, the App component, is responsible for three main things.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+It renders the NavigationBar and Jumbrotron components. It renders The Platforms container, which holds all other containers and components. It also renders a Layout component and holds the same layout for entire application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+          <NavigationBar/>
+          <Jumbotron/>
+          <Layout>
+            <PlatformsContainer/>
+          </Layout>
 
-### Code Splitting
+### Overview: **Containers** + _Components_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+_App_
+_Navigation_ (functional)
+_Jumbotron_ (functional)
+_Layout_ (functional)
 
-### Analyzing the Bundle Size
+**Platform** **Container**
+_Platforms_ (functional)
+_Platform_ (functional)
+_PlatformInput_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**Course** **Container**
+_Courses_ (functional)
+_Course_ (functional)
+_CourseInput_
 
-### Making a Progressive Web App
+**ToDo** **Container**
+_ToDos_ (functional)
+_ToDoInput_
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+The redux store holds the platforms which will hold all courses and each course's todos as this is this way I designed my backend. This meant I could use only one single reducer, the platformsReducer which made it easier on the frontend to keep track of which platform courses and todos belong to as I always returned platforms.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/xv15pd2mmxf8abmxih7r.png)
+(expanded - to show courses nested)
 
-### Deployment
+![Alt Text](https://thepracticaldev.s3.amazonaws.com/i/qrf9av9p687rqzfjvij0.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+I built 4 actions fetchPlatforms, addPlatform, addCourse, and addTo.
 
-### `npm run build` fails to minify
+### Bootstrap
+One thing that was important to me for this project was to really understand Bootstrap. For all my prior projects, I have done all by CSS by hand, which was great because I wanted to really understand how to do all the styling without help.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+However, I am at place where I feel comfortable and can now upgrade to Bootstrap and save TIME!
+
+Once I got the hang of importing the react-bootstrap components - the app really came together. [The bootstrap docs](https://react-bootstrap.netlify.com/) are fantastic!
+
+### Next Additions:
+
+These are additions and functionalities that I'm currently working on adding:
+
+* Add a user model
+* Ability to login/sign up for an account
+* Delete/Edit a platform/course/todo
+* Check off a todo
+
+### Installation
+#### Backend
+
+* Install Ruby 2.6.1 on your local computer
+* Fork the repository from https://github.com/mvlt18/react-redux-backend
+* Clone the repository into a directory of your choice with `git clone git@github.com:mvlt18/react-redux-backend.git`
+* Navigate to the directory with `cd react-redux-backend`
+* Run `bundle install`
+* Create the program tables by running `rake db:create` then  `rake db:migrate`
+* Seed data is provided by running `rake db:seed`
+* Open up a server of your choice
+
+#### Frontend
+* Fork the repository from https://github.com/mvlt18/react-redux-frontend
+* Clone the repository into a directory of your choice with `git clone git@github.com:mvlt18/react-redux-frontend.git`
+* Navigate to the directory `cd react-redux-frontend` in a separate tab from the backend
+* Run `npm install` to install dependencies.
+* Run `npm start` and open in a separate server than backend to have both running at the same time.
+
+### Demo
+
+https://youtu.be/YBPlq44lY_k
+
+### Contributing
+
+You can make a request or report a bug by creating an issue or by submitting a pull request.
+* Create a branch named after the feature or bug.
+* Write your code and commit changes/issue with a commit message.
+* Push the branch to the master branch.
+* Create a pull request, explaining the issue/reason for change/feature addition.
+
+## License
+
+Fresh Bites is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
